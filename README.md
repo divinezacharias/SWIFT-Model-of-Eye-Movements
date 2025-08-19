@@ -66,6 +66,7 @@ Source Data
 This project uses eye-tracking data from natural reading experiments, combining multiple sources:
 
 **CopCo – Copenhagen Corpus of Natural Reading (Danish)**
+
 Eye-tracking recordings from natural reading of Danish texts
 1,832 sentences (34,897 tokens)
 Gaze data from 22 participants
