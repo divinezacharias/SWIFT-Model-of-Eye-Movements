@@ -47,7 +47,7 @@ Features
 
 ---
 
-## 📂 Repository Structure
+**##Repository Structure**
 
 ```
 .
@@ -162,7 +162,7 @@ uploaded = files.upload()   # upload fixation CSV (swift_model.csv)
 
 ---
 
-## 📊 Outputs
+##Outputs
 
 * Enhanced fixation dataset (`swift_model_enhanced.csv`)
 * Histograms of fixation durations
@@ -173,7 +173,7 @@ uploaded = files.upload()   # upload fixation CSV (swift_model.csv)
 
 ---
 
-## 🔬 SWIFT Model Parameters
+##SWIFT Model Parameters
 
 The Bayesian inference estimates the following 10 parameters:
 
@@ -190,7 +190,7 @@ The Bayesian inference estimates the following 10 parameters:
 
 ---
 
-## 📦 Installation
+##Installation
 
 Dependencies (automatically installed in Colab):
 
@@ -207,7 +207,7 @@ pip install -r requirements.txt
 
 ---
 
-## 📜 Citation
+##Citation
 
 If you use this code in your research, please cite the original **SWIFT model** and **BayesFlow**:
 
