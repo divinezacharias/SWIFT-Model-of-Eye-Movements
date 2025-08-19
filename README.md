@@ -7,15 +7,15 @@ Cognitive states of the reader
 Text properties such as word frequency, predictability, and sentence structure
 Modeling these dynamics statistically is challenging due to the complexity and variability of eye movements.
 
-Goal
-
+**Goal
+**
 The SWIFT model is a dynamic generative model of eye movement control during reading. It simulates how a reader’s gaze shifts across a sentence as they process its content. The model incorporates:
 
 Fixation duration – how long the eye stays on a word
 Saccades – eye movements to the next word
 Because the full SWIFT model is computationally intensive and has an intractable likelihood, this project uses a simplified SWIFT model with BayesFlow for Bayesian parameter inference.
 
-Project Tasks
+**Project Tasks**
 
 Implement the simplified SWIFT model in BayesFlow
 Use real eye-tracking data from a controlled reading experiment
@@ -162,7 +162,7 @@ uploaded = files.upload()   # upload fixation CSV (swift_model.csv)
 
 ---
 
-##Outputs
+**##Outputs**
 
 * Enhanced fixation dataset (`swift_model_enhanced.csv`)
 * Histograms of fixation durations
@@ -173,7 +173,7 @@ uploaded = files.upload()   # upload fixation CSV (swift_model.csv)
 
 ---
 
-##SWIFT Model Parameters
+**##SWIFT Model Parameters**
 
 The Bayesian inference estimates the following 10 parameters:
 
@@ -190,7 +190,7 @@ The Bayesian inference estimates the following 10 parameters:
 
 ---
 
-##Installation
+**##Installation**
 
 Dependencies (automatically installed in Colab):
 
@@ -207,7 +207,7 @@ pip install -r requirements.txt
 
 ---
 
-##Citation
+**##Citation**
 
 If you use this code in your research, please cite the original **SWIFT model** and **BayesFlow**:
 
