@@ -98,17 +98,41 @@ This makes it well-suited for Bayesian parameter inference of the SWIFT model, e
 The fixation dataset should be a **CSV file** with (at minimum) the following columns:
 swift_model_enhanced.csv
 
-Column Name	                 Description
-sentence_id	                 Sentence index (grouping fixations by sentence)
-word_index	                  Word position within a sentence
-word	                        The actual word/token
-fix_dur_ms	                  Fixation duration in milliseconds
-forward_jump_size	           Saccade length (distance moved to next fixation, negative = regression)
-is_regression               	Binary indicator of regression saccade (1 = regression, 0 = forward)
-word_length	                 Number of characters in the word
-log10_word_frequency	        Log10 frequency of the word (from corpus or proxy distribution)
-predictability	              Predictability (from corpus or logistic proxy of frequency/length/position)
-prev_fix_dur_ms	             Previous fixation duration (shifted or imputed if missing)
+**Final Column Names**
+
+| Column Name                 | Type        | Description                                                                 |
+|------------------------------|------------|-----------------------------------------------------------------------------|
+| `sentence_id`               | Integer    | Unique identifier for each sentence (groups words and fixations).            |
+| `word_id`                   | Integer    | Identifier for the word within the text/corpus.                             |
+| `fix_onset_ms`              | Integer    | Onset time of fixation in milliseconds (relative to trial start).            |
+| `fix_dur_ms`                | Float (ms) | Duration of the fixation in milliseconds.                                   |
+| `saccade_word_jump`         | Integer    | Number of words jumped during the saccade (positive = forward, negative = back). |
+| `word_length`               | Integer    | Number of characters in the word.                                           |
+| `word_frequency`            | Float      | Raw frequency of the word in the corpus.                                    |
+| `fixation_idx_in_sentence`  | Integer    | Index of fixation within the sentence sequence.                             |
+| `is_first_fixation_on_word` | Boolean    | Whether this fixation is the first on the word (`True`/`False`).             |
+| `first_fix_dur_ms`          | Float (ms) | Duration of the first fixation on the word.                                 |
+| `gaze_total_ms`             | Float (ms) | Total gaze duration on the word (sum of all fixations).                     |
+| `is_regression`             | Binary     | Indicator if the saccade is a regression (`1` = regression, `0` = forward). |
+| `forward_jump_size`         | Integer    | Forward saccade distance in word units (auto-computed).                     |
+| `regression_size`           | Integer    | Size of the regression movement (negative word jump).                       |
+| `prev_fix_dur_ms`           | Float (ms) | Duration of the previous fixation (imputed if missing).                     |
+| `log10_word_frequency`      | Float      | Log10-transformed word frequency.                                           |
+| `fix_dur_ms_z`              | Float      | Z-score of fixation duration (normalized within dataset).                   |
+| `first_fix_dur_ms_z`        | Float      | Z-score of first fixation duration on the word.                             |
+| `gaze_total_ms_z`           | Float      | Z-score of total gaze duration on the word.                                 |
+| `word_length_z`             | Float      | Z-score of word length.                                                     |
+| `log10_word_frequency_z`    | Float      | Z-score of log10 word frequency.                                            |
+| `sent_id`                   | Integer    | Alternate sentence ID (kept for compatibility).                             |
+| `word_index`                | Integer    | Position of the word in the sentence (starting at 0).                       |
+| `log10_freq`                | Float      | Duplicate/alternate log10 word frequency (for merging with corpus).         |
+| `predictability`            | Float (0–1)| Probability of predicting the word given context (cloze or proxy).          |
+| `predictability_method`     | String     | Method used to assign predictability (e.g., `proxy_from_freq_len_position`). |
+| `z_word_length`             | Float      | Z-score normalized word length.                                             |
+| `z_log10_freq`              | Float      | Z-score normalized log10 word frequency.                                    |
+| `z_predictability`          | Float      | Z-score normalized predictability.                                          |
+| `sent_pos_frac`             | Float      | Relative position of the word in the sentence (0–1).                        |
+
 
 
 ## ⚡ Quick Start Guide
