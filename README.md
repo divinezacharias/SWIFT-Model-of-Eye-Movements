@@ -1,11 +1,11 @@
 # SWIFT-Model-of-Eye-Movements
 
-This project implements a simplified version of the SWIFT model (Engbert & Rabe, 2024) to study how people process written language through eye-tracking data.
-
-In reading research, eye-tracking provides crucial information about how readers decide when to move their eyes and where to look next. These decisions depend both on:
-Cognitive states of the reader
-Text properties such as word frequency, predictability, and sentence structure
-Modeling these dynamics statistically is challenging due to the complexity and variability of eye movements.
+This repository implements Bayesian parameter inference for the SWIFT eye-tracking model using real reading data.It combines fixation sequences and word-level corpus features into an enhanced dataset (swift_model_enhanced.csv) and applies BayesFlow (v1/v2) or Approximate Bayesian Computation (ABC) for inference. The project includes:
+Data preprocessing & integration (fixations + corpus merge, imputation, normalization),
+SWIFT-inspired simulator for fixation durations and saccades,
+Bayesian inference pipeline with posterior estimation,
+Diagnostic visualizations (posterior plots, PPC checks, ECDFs),
+Enhanced dataset with 30+ well-documented features for reading research.
 
 **Goal**
 
