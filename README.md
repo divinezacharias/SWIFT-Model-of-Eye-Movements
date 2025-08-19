@@ -65,8 +65,7 @@ Source Data
 
 This project uses eye-tracking data from natural reading experiments, combining multiple sources:
 
-**CopCo – Copenhagen Corpus of Natural Reading (Danish)**
-
+1. **CopCo – Copenhagen Corpus of Natural Reading (Danish)**
 Eye-tracking recordings from natural reading of Danish texts
 1,832 sentences (34,897 tokens)
 Gaze data from 22 participants
@@ -75,11 +74,11 @@ Ideal for reading research and statistical modeling of eye-movement control
 🔗 CopCo Corpus (ArXiv Reference)
 Size: < 300 MB
 
-**Controlled Reading Experiment Dataset**
+2. **Controlled Reading Experiment Dataset**
 Fixation sequences for an individual participant
 OSF Dataset – Fixation sequences
 
-**Corpus File (Word Properties)**
+3. **Corpus File (Word Properties)**
 Word-level features: length, frequency, predictability
 OSF Corpus File
 
