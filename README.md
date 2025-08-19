@@ -1,11 +1,30 @@
 # SWIFT-Model-of-Eye-Movements
 
-This repository provides a Python script to perform Bayesian parameter inference for the SWIFT eye-tracking model using fixation data.
-It leverages BayesFlow (v1/v2) and Approximate Bayesian Computation (ABC) for inference and includes **diagnostic visualizations and posterior predictive checks.
+This project implements a simplified version of the SWIFT model (Engbert & Rabe, 2024) to study how people process written language through eye-tracking data.
 
----
+In reading research, eye-tracking provides crucial information about how readers decide when to move their eyes and where to look next. These decisions depend both on:
+Cognitive states of the reader
+Text properties such as word frequency, predictability, and sentence structure
+Modeling these dynamics statistically is challenging due to the complexity and variability of eye movements.
 
-## 🚀 Features
+Goal
+
+The SWIFT model is a dynamic generative model of eye movement control during reading. It simulates how a reader’s gaze shifts across a sentence as they process its content. The model incorporates:
+
+Fixation duration – how long the eye stays on a word
+Saccades – eye movements to the next word
+Because the full SWIFT model is computationally intensive and has an intractable likelihood, this project uses a simplified SWIFT model with BayesFlow for Bayesian parameter inference.
+
+Project Tasks
+
+Implement the simplified SWIFT model in BayesFlow
+Use real eye-tracking data from a controlled reading experiment
+Estimate parameters related to gaze control and reading dynamics
+Investigate how well the model captures:
+Observed fixation durations
+Saccade patterns and regressions
+
+Features
 
 * **Automatic data preprocessing**
 
