@@ -61,18 +61,54 @@ Features
 
 ## 🔧 Data Requirements
 
+Source Data
+
+This project uses eye-tracking data from natural reading experiments, combining multiple sources:
+
+**CopCo – Copenhagen Corpus of Natural Reading (Danish)**
+Eye-tracking recordings from natural reading of Danish texts
+1,832 sentences (34,897 tokens)
+Gaze data from 22 participants
+Contains fixation durations, saccades, and gaze behavior in natural text reading
+Ideal for reading research and statistical modeling of eye-movement control
+🔗 CopCo Corpus (ArXiv Reference)
+Size: < 300 MB
+
+**Controlled Reading Experiment Dataset**
+Fixation sequences for an individual participant
+OSF Dataset – Fixation sequences
+
+**Corpus File (Word Properties)**
+Word-level features: length, frequency, predictability
+OSF Corpus File
+
+Export
+Final dataset saved as: swift_model_enhanced.csv
+Ensures compatibility with the BayesFlow SWIFT inference pipeline
+
+Suitability
+
+The final dataset contains:
+Observed fixation durations
+Saccade behavior (forward jumps, regressions)
+Word-level predictors (length, frequency, predictability)
+This makes it well-suited for Bayesian parameter inference of the SWIFT model, enabling the estimation of parameters related to gaze control and reading dynamics.
+
+
 The fixation dataset should be a **CSV file** with (at minimum) the following columns:
 swift_model_enhanced.csv
 
-* `sentence_id` 
-* `word_index` 
-* `fix_dur_ms` 
-* `word_length`
-* `log10_word_frequency`
-* `predictability`
-* `forward_jump_size`
-* `is_regression`
-* `prev_fix_dur_ms`
+Column Name	                 Description
+sentence_id	                 Sentence index (grouping fixations by sentence)
+word_index	                  Word position within a sentence
+word	                        The actual word/token
+fix_dur_ms	                  Fixation duration in milliseconds
+forward_jump_size	           Saccade length (distance moved to next fixation, negative = regression)
+is_regression               	Binary indicator of regression saccade (1 = regression, 0 = forward)
+word_length	                 Number of characters in the word
+log10_word_frequency	        Log10 frequency of the word (from corpus or proxy distribution)
+predictability	              Predictability (from corpus or logistic proxy of frequency/length/position)
+prev_fix_dur_ms	             Previous fixation duration (shifted or imputed if missing)
 
 
 ## ⚡ Quick Start Guide
