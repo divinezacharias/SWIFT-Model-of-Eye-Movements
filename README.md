@@ -7,8 +7,8 @@ Cognitive states of the reader
 Text properties such as word frequency, predictability, and sentence structure
 Modeling these dynamics statistically is challenging due to the complexity and variability of eye movements.
 
-**Goal
-**
+**Goal**
+
 The SWIFT model is a dynamic generative model of eye movement control during reading. It simulates how a reader’s gaze shifts across a sentence as they process its content. The model incorporates:
 
 Fixation duration – how long the eye stays on a word
