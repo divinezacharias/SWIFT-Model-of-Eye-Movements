@@ -135,7 +135,7 @@ swift_model_enhanced.csv
 
 
 
-## ⚡ Quick Start Guide
+## Quick Start Guide
 
 ### Run on Google Colab
 
@@ -216,7 +216,7 @@ If you use this code in your research, please cite the original **SWIFT model** 
 
 ---
 
-## 📌 License
+## License
 
 MIT License – free to use, modify, and distribute.
 
